@@ -13,6 +13,7 @@ class Team extends React.Component {
                 <div className='card-header'>
                     <h4 className='team-name'>
                         {team.name}
+                        <span className='team-abbr'>({team.abbr})</span>
                         <span className='badge badge-secondary'>{team.gameCount}</span>
                     </h4>
                 </div>
