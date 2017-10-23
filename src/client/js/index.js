@@ -6,12 +6,14 @@ import ReduxThunk from 'redux-thunk';
 import { connect, Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Week from './Week.js';
 import Teams from './Teams.js';
 import App from './App.react.js';
 import 'normalize.css';
 import '../css/index.less';
 
 const reducer = combineReducers({
+    week: Week.Reducer,
     teams: Teams.Reducer,
 });
 const store = createStore(reducer, applyMiddleware(ReduxThunk));
