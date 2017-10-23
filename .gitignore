@@ -1,0 +1,10 @@
+.coverage
+*.swp
+*.log
+*.DS_Store
+*backup*
+*config.json
+config.json
+cover/
+node_modules/
+dist/
