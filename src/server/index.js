@@ -14,7 +14,7 @@ const renderApp = `
     <!doctype html>
     <html>
         <head>
-            <title>pb+ login</title>
+            <title>nba-team-matchup</title>
         </head>
         <body>
             <div id="app-root"></div>
