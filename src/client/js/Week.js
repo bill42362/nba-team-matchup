@@ -1,7 +1,13 @@
 // Teams.js
 'use strict';
 
-const defaultState = new Date().getTime();
+const now = new Date();
+const year = now.getFullYear();
+const month = now.getMonth();
+const date = now.getDate();
+const dayOffset = now.getDay() - 2;
+const thisTuesday = new Date(year, month, date - dayOffset);
+const defaultState = thisTuesday.getTime();
 
 const Reducer = (state = defaultState, action) => {
     switch(action.type) {

@@ -36,6 +36,6 @@ const Reducer = (state = defaultState, action) => {
 const resetTeams = () => { return {type: 'RESET_TEAMS', payload: { }}; };
 const pushTeam = ({ team }) => { return {type: 'PUSH_TEAM', payload: { team }}; };
 
-const Actions = { pushTeam };
+const Actions = { pushTeam, resetTeams };
 
 export default { Reducer, Actions };

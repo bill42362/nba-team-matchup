@@ -3,6 +3,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import WeekSelector from './WeekSelector.react.js';
+import Week from './Week.js';
 import Team from './Team.react.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/app.less';
@@ -14,6 +15,7 @@ const ConnectedWeekSelector = connect(
         };
     },
     (dispatch, ownProps) => { return {
+        updateTimestamp: ({ timestamp }) => { dispatch(Week.Actions.updateTimestamp({ timestamp })); },
     }; }
 )(WeekSelector);
 
