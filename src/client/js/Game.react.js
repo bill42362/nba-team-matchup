@@ -7,9 +7,10 @@ import '../css/game.less';
 class Game extends React.Component {
     constructor(props) { super(props); }
     render() {
-        const { game } = this.props;
+        const { game, hasSequenceGame } = this.props;
+        const highlightGameClassname = hasSequenceGame ? ' text-white bg-success' : '';
         return <div className='game'>
-            <div className='card'>
+            <div className={`card${highlightGameClassname}`}>
                 <div className='card-body'>
                     <div className='matchup-teams'>
                         <span className='away-team'>{game.homeTeam.profile.name}</span>
