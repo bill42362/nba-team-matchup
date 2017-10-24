@@ -26,7 +26,11 @@ const app = Express();
 
 app.get('/', (req, res) => { res.send(renderApp); })
 app.get('/schedule', (req, res) => {
-    fetch('https://tw.global.nba.com/stats2/season/schedule.json?countryCode=TW&days=7&locale=zh_TW&tz=%2B8', {method: 'get'})
+    fetch(
+        `https://tw.global.nba.com/stats2/season/schedule.json`
+            + `?countryCode=TW&days=7&locale=zh_TW&tz=%2B8&gameDate=${req.query.gameDate}`,
+        {method: 'get'}
+    )
     .then(response => {
         if(response.status >= 400) { throw new Error('Bad response from server'); }
         return response.json();

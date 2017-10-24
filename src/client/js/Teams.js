@@ -5,6 +5,8 @@ const defaultState = [];
 
 const Reducer = (state = defaultState, action) => {
     switch(action.type) {
+        case 'RESET_TEAMS':
+            return [];
         case 'PUSH_TEAM':
             const { team } = action.payload;
             const isTeamExist = !!state.filter(stateTeam => team.id === stateTeam.id)[0];
@@ -31,8 +33,9 @@ const Reducer = (state = defaultState, action) => {
     }
 }
 
+const resetTeams = () => { return {type: 'RESET_TEAMS', payload: { }}; };
 const pushTeam = ({ team }) => { return {type: 'PUSH_TEAM', payload: { team }}; };
 
-const Actions = { pushTeam };
+const Actions = { pushTeam, resetTeams };
 
 export default { Reducer, Actions };
